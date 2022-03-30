@@ -1,0 +1,41 @@
+from enum import auto
+
+
+def auto_key_found(plan_text, key):
+    # key = list(key)
+    print(key)
+    if len(plan_text) == len(key):
+        return key
+    else:
+        for i in range(len(plan_text) - len(key)):
+            key.append(plan_text[i])
+            return (" ".joi(key))
+
+
+def vengeer_key_found(plan_text, key):
+    key = list(key)
+    # print(key)
+    if len(plan_text) == len(key):
+        return key
+    else:
+        for i in range(len(plan_text) - len(key)):
+            key.appaend(key[i])
+            return (" ".joi(key))
+
+
+def encr(plan_text, key):
+    cipher_text = []
+    for i in range(len(plan_text)):
+        aicecode = (ord(plan_text[i]) + ord(key[i])) % 26
+        aicecode += ord('A')
+        cipher_text.append(chr(aicecode))
+    return ("".join(cipher_text))
+
+
+#print(auto_key_found("suhil", "amr"))
+#print(vengeer_key_found("suahil", "amr+"))
+
+plan = input('inter the psln text')
+key = input('inter the key')
+
+print(encr(plan, auto_key_found(plan, key)))
